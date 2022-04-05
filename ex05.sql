@@ -16,6 +16,6 @@ WHERE ds_funcao = 'Presidente' OR ds_funcao = 'Gerente'
 ORDER BY (teto_salario - base_salario) DESC;
 
 --5
-&&v
-SELECT id_empregado, nome, salario, salario*12, &v AS "aliquota",  &v * (salario*12) AS "aliquote anual"
+DEFINE &var = 0.5
+SELECT id_empregado, nome, salario, salario*12, &var AS "aliquota", &var * (salario*12) AS "aliquote anual"
 FROM tb_empregado;
